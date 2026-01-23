@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Ma Todo List</title>
+    
+</head>
+<body>
+    <div class="main-wrapper">
+        <aside class="legend">
+            <h3>Catégories</h3>
+            <ul>
+                <li><span class="dot work"></span> Travail</li>
+                <li><span class="dot personal"></span> Perso</li>
+                <li><span class="dot urgent"></span> Urgent</li>
+            </ul>
+        </aside>
+
+        <div class="container">
+            <h1> ⭐ TO DO LIST ⭐ </h1>
+            
+            <div class="input-section">
+                <input type="text" id="Input" placeholder="Titre de la tâche">
+                <textarea id="Details" placeholder="Détails au survol..."></textarea>
+                <input type="date" id="TaskDate">
+                <select id="Category">
+                    <option value="work">Travail</option>
+                    <option value="personal">Perso</option>
+                    <option value="urgent">Urgent</option>
+                </select>
+                
+                <button id="case">Ajouter la tâche</button>
+            </div>
+
+            <ul id="liste"></ul>
+
+            
+            
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,272 @@
+.main-wrapper { display: flex; gap: 20px; padding: 20px; font-family: sans-serif; }
+.dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; }
+.work { background: #4da3ff; } .personal { background: #4caf50; } .urgent { background: #ff5252; }
+
+li { position: relative; padding: 10px; margin: 5px 0; display: flex; align-items: center; border-left: 10px solid #ccc; background: #f4f4f4; }
+li.category-work { border-left-color: #4da3ff; }
+li.category-personal { border-left-color: #4caf50; }
+li.category-urgent { border-left-color: #ff5252; }
+
+
+body {
+    background-color: cadetblue; 
+    font-family: 'Times New Roman', Times, serif; 
+    background-image: url('wallap.jpg');
+    background-size: cover;
+    background-position: center; 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+div {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,1);
+    width: 70%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#Input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    width: 70%;
+    outline: none;
+}
+
+h1 {
+    color: rgb(172, 152, 156); 
+}
+
+button#case {
+    padding: 10px 15px;
+    background-color: #c788d7;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+li {
+    background-color: rgba(255,255,255,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Force les enfants à partir de la gauche */
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-left: 11px solid orchid;
+    color: rgb(21, 23, 14); 
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Checkbox - bien à gauche */
+li input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Texte de la tâche - aligné à gauche juste après la checkbox */
+li span {
+    flex: 1;
+    text-align: left;
+    padding-left: 15px; /* Espace entre checkbox et texte */
+    word-wrap: break-word;
+}
+
+/* Bouton poubelle - à droite */
+li button {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+li button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}
+
+.termine {
+    text-decoration: line-through;
+    color: rgba(155, 42, 42, 0.8);
+    font-style: italic;
+}
+
+/* La largeur de la barre */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Le fond de la barre (rail) */
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* La partie qui bouge (le curseur) */
+::-webkit-scrollbar-thumb {
+    background: rgb(79, 166, 248); 
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Quand on passe la souris dessus */
+::-webkit-scrollbar-thumb:hover {
+    background: #d09311; 
+}
+
+.date-badge {
+    background: #e09393;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 10px;
+    color: #280303;
+    font-family: monospace;
+}
+.input-section {
+    display: flex;         /* Active le mode Flexbox */
+    align-items: center;   /* Aligne verticalement tous les éléments au centre */
+    justify-content: center; /* Centre le groupe complet horizontalement */
+    gap: 10px;             /* Ajoute un petit espace entre chaque élément */
+    flex-wrap: wrap;       /* Permet de passer à la ligne si l'écran est trop petit */
+}
+
+/* Pour que le textarea ne soit pas trop imposant par rapport aux autres */
+textarea#Details {
+    resize: none;          /* Empêche de déformer le design en le tirant */
+    height: 35px;          /* Donne-lui une hauteur proche de tes autres inputs */
+    vertical-align: middle;
+}
+.task-tooltip {
+    display: none;
+    position: absolute;
+    background: #335170;
+    opacity: 0.9;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    left: 75px; /* À ajuster selon ta mise en page */
+    z-index: 100;
+    white-space: pre-wrap; /* Pour garder les retours à la ligne */
+}
+
+li:hover .task-tooltip {
+    display: block;
+}
+
+/* Style pour les tâches du jour */
+li.today-task {
+    transform: scale(1.05); /* Elle est 5% plus grande */
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ffcc00; /* Contour jaune/or */
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.4); /* Ombre lumineuse */
+    z-index: 2; /* Pour qu'elle passe au-dessus des autres */
+    background: #fff;
+}
+
+@keyframes pulse-boosted {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+    }
+    50% {
+        transform: scale(1.01); /* Agrandissement plus fort */
+        box-shadow: 0 0 25px rgba(255, 204, 0, 0.8), 0 0 40px rgba(255, 204, 0, 0.4);
+        border-color: #fff; /* Le bord devient blanc au sommet du pulse */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 204, 0, 0.4);
+    }
+}
+
+li.today-task {
+    animation: pulse-boosted 2s infinite ease-in-out; /* Plus rapide (1.5s au lieu de 2s) */
+    z-index: 10; /* Pour passer bien au-dessus des autres lors de l'agrandissement */
+}
+
+/* --- ANIMATION DE LA POUBELLE (Wiggle) --- */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+.del-btn:hover {
+    display: inline-block; /* Nécessaire pour que la rotation fonctionne bien */
+    animation: wiggle 0.3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+/* --- ANIMATION DE LA RATURE (Strikethrough fluide) --- */
+.texte-tache {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.texte-tache.termine {
+    color: rgba(176, 56, 56, 0.4); /* Le texte s'efface un peu */
+}
+
+
+.texte-tache.termine::after {
+    width: 100%; /* Quand c'est fini, la barre traverse tout le texte */
+}
+
+/* On force l'épaisseur de la bordure pour les tâches du jour */
+li.today-task {
+    border-left-width: 20px !important; /* On l'élargit */
+    border-style: solid; /* On s'assure qu'elle reste bien droite */
+}
+
+/* On peut aussi changer la couleur de l'ombre (glow) pour qu'elle soit
+   de la même couleur que la catégorie au lieu d'être toujours jaune ! */
+
+li.today-task.category-work { 
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.6); 
+    border-color: #007bff;
+}
+
+li.today-task.category-personal { 
+    box-shadow: 0 0 20px rgba(40, 167, 69, 0.6); 
+    border-color: #28a745;
+}
+
+li.today-task.category-urgent { 
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.6); 
+    border-color: #dc3545;
+}
