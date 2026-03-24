@@ -19,3 +19,7 @@ A web-based task management app built with HTML, CSS and vanilla JavaScript.
 ## 🚀 Getting Started
 
 No installation required — simply open `index.html` in your browser.
+
+## 📸 Preview 
+
+<img src="./preview.png" style="width: 30%;">
