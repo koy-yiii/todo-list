@@ -11,7 +11,7 @@ li.category-urgent { border-left-color: #ff5252; }
 body {
     background-color: cadetblue; 
     font-family: 'Times New Roman', Times, serif; 
-    background-image: url('wallap.jpg');
+    background-image: url('wallpaper.jpg');
     background-size: cover;
     background-position: center; 
     background-attachment: fixed;
